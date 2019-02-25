@@ -14,9 +14,9 @@ void mystery1(auto& Data)
 {
   cout<<endl<<"Mystery 1"<<endl<<"---------------------"<<endl;
 
-  for ( int i = 0 ; i < Data.size( ) ; i++)
+  for ( unsigned i = 0 ; i < Data.size( ) ; i++)
   {
-    for ( int j = 0 ; j < i ; j++)
+    for ( unsigned j = 0 ; j < i ; j++)
 	if ( Data[ i ] < Data[ j ] )
 	    swap( Data[ i ] , Data[ j ] );
 
@@ -26,6 +26,32 @@ void mystery1(auto& Data)
 }
 
 //... Other mysteries...
+void mystery2(auto& Data)
+{
+  cout<<endl<<"Mystery 2"<<endl<<"---------------------"<<endl;
+  for (unsigned i =0; i < Data.size();i++){
+	for (unsigned j =0;j < Data.size() -1; j++)
+		if (Data[j+1] < Data[j])
+ 			swap (Data[j+1],Data[j]);
+
+    print(Data);
+  }//end outer for (this brace is needed to include the print statement)
+
+}
+
+void mystery3(auto& Data)
+{
+  cout<<endl<<"Mystery 3"<<endl<<"---------------------"<<endl;
+  for (unsigned i =0; i < Data.size();i++){
+	for (unsigned j =i;j < Data.size() ; j++)
+		if (Data[j] < Data[i])
+ 			swap (Data[i],Data[j]);
+
+    print(Data);
+  }//end outer for (this brace is needed to include the print statement)
+
+}
+
 
 int main()
 {
